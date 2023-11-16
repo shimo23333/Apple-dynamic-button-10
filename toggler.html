@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		.toggler {
+			position: relative;
+			width: 100px;
+			height: 50px;
+			border-radius: 25px;
+			background: #ccc;
+			transition: 0.5s;
+		}
+		.toggler > .circle {
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			width: 44px;
+			height: 44px;
+			border-radius: 22px;
+			background-color: #fff;
+			transition: 0.5s;
+		}
+
+		.toggler.active {
+			background: green;
+		}
+		.toggler.active > .circle  {
+			left: 53px;
+		}
+	</style>
+</head>
+<body>
+	<div id="t1" class="toggler" onclick="onTogglerClick()">
+		<div class="circle"></div>
+	</div>
+
+	<script type="text/javascript">
+
+		function onTogglerClick() {
+
+			// 取得 toggler
+			var t = document.getElementById('t1');
+
+			// 判斷他目前的 className
+			// 如果只有 toggler 就改成 toggler active
+			if (t.className == 'toggler') {
+				t.className = 'toggler active';
+			}
+			// 如果已經是 toggler active 就改成 toggler
+			else {
+				t.className = 'toggler';
+			}
+		}
+		
+	</script>
+</body>
+</html>
+
